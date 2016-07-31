@@ -1,0 +1,252 @@
+/* == ALL View Nav ============== */
+/* Nav Border */
+div.mk-header-holder{
+	border-top:#096f9a 2px solid;
+}
+div.mk-header-holder,
+#mk-responsive-nav{
+	border-bottom: #ffb200 3px solid;
+}
+header#mk-header{
+	border-bottom:#dc9a00 1px solid;
+}
+#mk-header .header-logo {
+    z-index: 1;
+}
+
+
+/* Sub Menu current page - styles */
+#mk-main-navigation ul.sub-menu a.menu-item-link:hover{
+	font-weight: 700;
+    	letter-spacing: 0.65px;
+}
+#mk-main-navigation ul.sub-menu li.current-menu-item a.menu-item-link,
+#mk-main-navigation ul.sub-menu li.current-menu-item a.menu-item-link:hover{
+	font-weight: 700;
+	color:#f97352!important;
+	cursor:default;
+    	letter-spacing: 1px;
+}
+/* #mk-main-navigation ul.sub-menu li.current_page_item a.menu-item-link{ ?page_item? } */
+
+/* Move up sub nav */
+.main-navigation-ul li.no-mega-menu ul.sub-menu{
+	top:68%;
+}
+
+
+/* == Desktop Nav ============== */
+/* Logo Smaller on the scroll/down/popout menu for desktop view */
+@media screen and (min-width:1141px) {
+	#mk-header.header-sticky-ready .header-logo.logo-has-sticky a img{
+		max-width: 82px;
+    		top: 56%;
+	}
+}
+
+/* == Mobile Nav ============== */
+/* Mobile View Nav */
+@media screen and (max-width:782px) {
+	div#scb-wrapper{
+    		box-shadow: none;
+	}
+
+}
+/* Hide the search bar in the mobile nav - at bottom */
+#mk-responsive-nav>.responsive-searchform {
+	display:none!important;
+}
+
+@media screen and (max-width:639px) {
+	div#scb-wrapper{
+    		z-index: 500;
+    		position: relative;
+    		background-color: transparent;
+	}
+	/* Top overlay mini nav (phone, email, in) */
+	div#scb-wrapper ul{
+		display: inline-block;	
+	}
+
+	div#mk-boxed-layout{
+		margin-top:-50px;
+	}
+
+	div.header-logo{
+	    overflow: hidden;
+	}
+	header.header-style-1.header-align-left .header-logo a{
+		margin-top:3px;
+	}
+}
+
+
+
+/* Fix for header view when your logged out ( all styles are done when logged in )*/
+@media screen and (min-width:783px){
+	html{
+		margin-top: 32px !important;
+	}
+}
+.sticky-style-slide.header-style-1.header-sticky-ready.header-toolbar-false .mk-header-holder, .sticky-style-slide.header-style-3.header-sticky-ready.header-toolbar-false .mk-header-holder{
+	top:32px !important;
+}
+/*[END] Fix for header */
+
+
+/* Background issues preventing the bg image from showing */
+#theme-page div#mk-page-id-48.theme-page-wrapper{
+	margin:20px auto!important;
+}
+.theme-page-wrapper{
+	background-color:white;
+}
+#theme-page,
+.mk-video-color-mask,
+#mk-page-id-48{
+	background-color: rgba(0, 0, 0, 0.0)!important;
+}
+
+.theme-page-wrapper{
+	border-radius: 4px;
+}
+/* [END] Background Issues */
+
+/* BCI Process page are: */
+/* Stick Template - CSS Update for Stick Templates */
+/* Adding padding for footer */
+#theme-page div.theme-page-wrapper.no-padding{
+	/* margin-bottom: 0px!important; // Stick Templates Default*/
+	/* margin: 20px auto // Style Default */
+	margin-bottom: 35px!important; // Override
+}
+
+
+
+
+
+
+/* Footer padding adj. */
+#mk-footer div.footer-wrapper,
+#mk-footer section.widget{
+	padding-bottom:0px;
+	margin-bottom:0px;
+}
+
+
+/* Sticky Footer 
+html,body,#mk-boxed-layout,div#mk-theme-container {
+ 	position: relative;
+    	min-height: 100%;
+	height: 100%!important;
+}
+div#mk-theme-container {
+  margin: 0 auto -200px;
+}
+
+section#mk-footer {
+	position: absolute;
+	height: 204px; 
+	overflow:hidden; 
+	left: 0;
+	bottom: -200px;
+	bottom: 0px;
+	width: 100%;
+
+}*/
+/* [END] Sticky Footer */
+
+
+
+
+
+/* ======================= Individual Pages ============================= */
+
+
+/* Our-Team - Birchmier.com/our-team/ */
+p.tmm.tmm_job{
+    font-size: 14px;
+    color: #a2a5a4;
+    text-transform: uppercase;
+}
+/* Hide Blank profile (#1 & #3) */
+.tmm .tmm_3_columns div.tmm_container:nth-of-type(1) div.tmm_member:nth-of-type(1), 
+.tmm .tmm_3_columns div.tmm_container:nth-of-type(1) div.tmm_member:nth-of-type(3){
+	display:none;
+}
+
+/* Brings 2nd row to 1st row */
+.tmm .tmm_3_columns div.tmm_container:nth-of-type(1) span.tmm_two_containers_tablet{
+	display: none;
+}
+
+/* Center first row (2nd item) */
+@media screen and (min-width:1026px) {
+	.tmm .tmm_3_columns div.tmm_container:nth-of-type(1) div.tmm_member:nth-of-type(2) {
+    		margin-right: 35.5%;
+    		margin-left: 35.5%;
+	}
+}
+
+.tmm .tmm_member{
+	min-height:280px;
+}
+.tmm_last_row_centered .tmm_container:last-child .tmm_member{
+	float:left;
+}
+
+/* [END] Our-Team */
+
+
+
+
+/*The Work We Do - http://birchmier.com/the-work-we-do*/
+div#mk-page-id-12 div.vc_tta-panels-container{
+    margin-top: 6px;
+    margin-bottom: 8px;
+    margin-right: 10px;
+}
+@media screen and (max-width:767px) {
+	div#mk-page-id-12 div.vc_tta-panels-container{
+		margin-left: 10px;
+	}
+}
+div#mk-page-id-12 ul.vc_tta-tabs-list{
+    margin-top: 4px;
+}
+/*[END] The Work We Do */
+
+
+/* Our Valued Partners - birchmier.com/our-valued-partners */
+/* Vertically center logos for desktop */
+@media screen and (min-width:768px) {
+	div#mk-page-id-1066 .vc_grid-item .vc_gitem-animated-block {
+		width:179px;
+		height:179px;
+		display:table-cell;
+		vertical-align: middle;
+	}
+}
+/* Disable click for these logos */
+div#mk-page-id-1066 a.vc_gitem-link,
+div#mk-page-id-1066 div.vc_gitem-is-link,
+div#mk-page-id-1066 div.vc_gitem-zone{
+	pointer-events: none!important;
+	cursor: default!important;
+}
+
+
+/* [END] - Our Valued Partners */
+
+
+
+body.page-id-10 div.wpb_content_element{
+	margin: 48px 0px 32px;
+}
+body.page-id-10 div.wpb_column div.wpb_content_element:first-child{
+	margin: 18px 0px 32px;
+}
+
+
+
+
