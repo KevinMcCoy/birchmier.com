@@ -18,8 +18,6 @@ add_action( 'footer_menu', 'mk_footer_menu' );
 
 
 
-
-
 /**
  */
 if ( !function_exists( 'mk_page_title' ) ) {
@@ -138,7 +136,7 @@ if ( !function_exists( 'mk_page_title' ) ) {
 		if ( function_exists( 'is_woocommerce' ) && is_woocommerce()) {
 			$title = __('Shop', 'mk_framework');
 			if(is_archive()) {
-				$title = (isset($mk_options['woocommerce_category_page_title']) && !empty($mk_options['woocommerce_category_page_title'])) ? $mk_options['woocommerce_category_page_title'] : __('Shop', 'mk_framework'); 
+				$title = (isset($mk_options['woocommerce_category_page_title']) && !empty($mk_options['woocommerce_category_page_title'])) ? $mk_options['woocommerce_category_page_title'] : __('Shop', 'mk_framework');
 			}
 		}
 
@@ -161,26 +159,33 @@ if ( !function_exists( 'mk_page_title' ) ) {
 
 		$align = !empty( $align ) ? $align : 'left';
 
+		// echo $post_id;
 
-		echo '<section id="mk-page-introduce" class="intro-'.$align.'">';
-		echo '<div class="mk-grid">';
-		if ( !empty( $title )) {
-			echo '<h1 class="page-introduce-title '.$shadow_css.'">' . $title . '</h1>';
-
+		if ( get_post_meta( $post_id, '_disable_breadcrumb', true ) != 'false' ) {
+			echo '<section id="mk-page-introduce" class="intro-'.$align.'">';
+				echo '<div class="mk-grid">';
+					do_action( 'theme_breadcrumbs', $post_id );
+				echo '<div class="clearboth">';
+			echo '</section>';
 		}
 
-		if ( !empty( $subtitle ) ) {
-			echo '<div class="page-introduce-subtitle">';
-			echo $subtitle;
-			echo '</div>';
-		}
-		if ( $mk_options['disable_breadcrumb'] == 'true' ) {
-			if ( get_post_meta( $post_id, '_disable_breadcrumb', true ) != 'false' ) {
-				do_action( 'theme_breadcrumbs', $post_id );
-			}
-		}
+		// if ( !empty( $title )) {
+		// 	echo '<h1 class="page-introduce-title '.$shadow_css.'">' . $title . '</h1>';
+		// }
 
-		echo '<div class="clearboth"></div></div></section>';
+		// if ( !empty( $subtitle ) ) {
+		// 	echo '<div class="page-introduce-subtitle">';
+		// 	echo $subtitle;
+		// 	echo '</div>';
+		// }
+
+		// if ( $mk_options['disable_breadcrumb'] == 'true' ) {
+		// 	if ( get_post_meta( $post_id, '_disable_breadcrumb', true ) != 'false' ) {
+		// 		do_action( 'theme_breadcrumbs', $post_id );
+		// 	}
+		// }
+
+		// echo '<div class="clearboth"></div></div></section>';
 
 	}
 }
@@ -190,10 +195,10 @@ if ( !function_exists( 'mk_page_title' ) ) {
 
 if(!function_exists('mk_theme_breadcrumbs')):
 function mk_theme_breadcrumbs() {
-        global $mk_options,
-        $post;
-        	$post_id = global_get_post_id();
-        	   if ( $post_id) {
+				global $mk_options,
+				$post;
+					$post_id = global_get_post_id();
+						 if ( $post_id) {
 					$local_skining = get_post_meta( $post_id, '_enable_local_backgrounds', true );
 					$breadcrumb_skin = get_post_meta( $post_id, '_breadcrumb_skin', true );
 					if ( $local_skining == 'true' && !empty( $breadcrumb_skin ) ) {
@@ -208,36 +213,36 @@ function mk_theme_breadcrumbs() {
 
 		$delimiter =  ' &#47; ';
 
-        echo '<div id="mk-breadcrumbs"><div class="mk-breadcrumbs-inner '.$breadcrumb_skin_class.'-skin">';
+				echo '<div id="mk-breadcrumbs"><div class="mk-breadcrumbs-inner '.$breadcrumb_skin_class.'-skin">';
 
-         if ( !is_front_page() ) {
-	        echo '<a href="';
-	        echo home_url();
-	        echo '">'.__('Home', 'mk_framework');
-	        echo "</a>" . $delimiter;
-        }
+				 if ( !is_front_page() ) {
+					echo '<a href="';
+					echo home_url();
+					echo '">'.__('Home', 'mk_framework');
+					echo "</a>" . $delimiter;
+				}
 
-        if(function_exists('is_woocommerce') && is_woocommerce() && is_archive()) {
-        	$shop_page_id = wc_get_page_id( 'shop' );
+				if(function_exists('is_woocommerce') && is_woocommerce() && is_archive()) {
+					$shop_page_id = wc_get_page_id( 'shop' );
 			$shop_page    = get_post( $shop_page_id );
 			$permalinks   = get_option( 'woocommerce_permalinks' );
-        	if ( $shop_page_id && $shop_page && get_option( 'page_on_front' ) !== $shop_page_id ) {
+					if ( $shop_page_id && $shop_page && get_option( 'page_on_front' ) !== $shop_page_id ) {
 				echo '<a href="' . get_permalink( $shop_page ) . '">' . $shop_page->post_title . '</a> ';
 			}
-        }
+				}
 
-        if (is_category() && !is_singular('portfolio')) {
-            
-            $category = get_the_category();
-            $ID = $category[0]->cat_ID;
-            echo is_wp_error( $cat_parents = get_category_parents($ID, TRUE, '', FALSE ) ) ? '' : '<span>'.$cat_parents.'</span>';
+				if (is_category() && !is_singular('portfolio')) {
 
-        } else if(is_singular('news')) {
-            echo '<span>'.get_the_title().'</span>';
+						$category = get_the_category();
+						$ID = $category[0]->cat_ID;
+						echo is_wp_error( $cat_parents = get_category_parents($ID, TRUE, '', FALSE ) ) ? '' : '<span>'.$cat_parents.'</span>';
 
-        } else if ( is_single() && ! is_attachment()) {
-		      	
-		       if ( get_post_type() == 'product' ) {
+				} else if(is_singular('news')) {
+						echo '<span>'.get_the_title().'</span>';
+
+				} else if ( is_single() && ! is_attachment()) {
+
+					 if ( get_post_type() == 'product' ) {
 
 					if ( $terms = wc_get_product_terms( $post->ID, 'product_cat', array( 'orderby' => 'parent', 'order' => 'DESC' ) ) ) {
 
@@ -261,27 +266,27 @@ function mk_theme_breadcrumbs() {
 					echo  get_the_title();
 
 				} elseif(is_singular('portfolio')) {
-		            $portfolio_category = get_the_term_list($post->ID, 'portfolio_category', '', ' / ');
-		            if(!empty($portfolio_category)) {
-		            	echo $portfolio_category . $delimiter;
-		            }
-		            echo '<span>'.get_the_title().'</span>';
+								$portfolio_category = get_the_term_list($post->ID, 'portfolio_category', '', ' / ');
+								if(!empty($portfolio_category)) {
+									echo $portfolio_category . $delimiter;
+								}
+								echo '<span>'.get_the_title().'</span>';
 
-		        } elseif ( get_post_type() != 'post') {
+						} elseif ( get_post_type() != 'post') {
 
-		        	if(function_exists( 'is_bbpress' ) && is_bbpress()) {
+							if(function_exists( 'is_bbpress' ) && is_bbpress()) {
 
-		        	} else {
-		        		$post_type = get_post_type_object( get_post_type() );
+							} else {
+								$post_type = get_post_type_object( get_post_type() );
 						$slug = $post_type->rewrite;
 							echo  '<a href="' . get_post_type_archive_link( get_post_type() ) . '">' . $post_type->labels->singular_name . '</a>' .$delimiter;
 						echo get_the_title();
-		        	}
+							}
 
 				} else {
 						$cat = current( get_the_category() );
 						echo get_category_parents( $cat, true, $delimiter );
-						echo get_the_title();	
+						echo get_the_title();
 				}
 		}  elseif ( is_page() && !$post->post_parent ) {
 
@@ -310,12 +315,12 @@ function mk_theme_breadcrumbs() {
 			$parent = get_post( $post->post_parent );
 			$cat = get_the_category( $parent->ID );
 			$cat = $cat[0];
-			 /* admin@innodron.com patch: 
-	        Fix for Catchable fatal error: Object of class WP_Error could not be converted to string
-	        ref: https://wordpress.org/support/topic/catchable-fatal-error-object-of-class-wp_error-could-not-be-converted-to-string-11
-		    */
-		    echo is_wp_error( $cat_parents = get_category_parents($cat, TRUE, '' . $delimiter . '') ) ? '' : $cat_parents;
-		   /* end admin@innodron.com patch */
+			 /* admin@innodron.com patch:
+					Fix for Catchable fatal error: Object of class WP_Error could not be converted to string
+					ref: https://wordpress.org/support/topic/catchable-fatal-error-object-of-class-wp_error-could-not-be-converted-to-string-11
+				*/
+				echo is_wp_error( $cat_parents = get_category_parents($cat, TRUE, '' . $delimiter . '') ) ? '' : $cat_parents;
+			 /* end admin@innodron.com patch */
 			echo '<a href="' . get_permalink( $parent ) . '">' . $parent->post_title . '</a>' . $delimiter;
 			echo  get_the_title();
 
@@ -347,23 +352,23 @@ function mk_theme_breadcrumbs() {
 
 			echo  get_the_time( 'Y' );
 
-		} 
+		}
 
 		if ( get_query_var( 'paged' ) )
 			echo ' (' . __( 'Page', 'mk_framework' ) . ' ' . get_query_var( 'paged' ) . ')';
-		
 
-        if (is_tax()) {
-            $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
-            if(function_exists('is_woocommerce') && is_woocommerce() && is_archive()) {
-            	echo $delimiter;
-            }
 
-            echo '<span>'.$term->name.'</span>';
-        }
-        
-        if ( function_exists( 'is_bbpress' ) && is_bbpress() ) {
-        	$item = array();
+				if (is_tax()) {
+						$term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
+						if(function_exists('is_woocommerce') && is_woocommerce() && is_archive()) {
+							echo $delimiter;
+						}
+
+						echo '<span>'.$term->name.'</span>';
+				}
+
+				if ( function_exists( 'is_bbpress' ) && is_bbpress() ) {
+					$item = array();
 
 				$post_type_object = get_post_type_object( bbp_get_forum_post_type() );
 
@@ -414,7 +419,7 @@ function mk_theme_breadcrumbs() {
 						$item[] = bbp_get_reply_title( $reply_id );
 
 					} else {
-						$item[] = '<a href="' . bbp_get_reply_url( $reply_id ) . '">' . bbp_get_reply_title( $reply_id ) . '</a>' ; 
+						$item[] = '<a href="' . bbp_get_reply_url( $reply_id ) . '">' . bbp_get_reply_title( $reply_id ) . '</a>' ;
 						$item[] = __( 'Edit', 'mk_framework' );
 					}
 
@@ -444,9 +449,9 @@ function mk_theme_breadcrumbs() {
 				echo implode($delimiter, $item);
 
 
-        }
-	
-        echo "</div></div>";
+				}
+
+				echo "</div></div>";
 }
 endif;
 
@@ -496,23 +501,23 @@ if ( !function_exists( 'mk_quick_contact' ) ) {
 				<input type="text" placeholder="<?php _e( 'Name*', 'mk_framework' ); ?>" required="required" id="contact_name" name="contact_name" class="text-input" value="" tabindex="<?php echo $tabindex_1; ?>" />
 				<input type="email" required="required" placeholder="<?php _e( 'Email*', 'mk_framework' ); ?>" id="contact_email" name="contact_email" class="text-input" value="" tabindex="<?php echo $tabindex_2; ?>"  />
 				<textarea placeholder="<?php _e( 'Message*', 'mk_framework' ); ?>" required="required" id="contact_content" name="contact_content" class="textarea" tabindex="<?php echo $tabindex_3; ?>"></textarea>
-				
+
 				<?php if($captcha_quick_contact == 'true') { ?>
 				<input placeholder="<?php _e( 'Enter Captcha', 'mk_framework' ); ?>" type="text" name="captcha" class="captcha-form text-input full" required="required" autocomplete="off" />
-		            <a href="#" class="captcha-change-image"><?php _e( 'Not readable? Change text.', 'mk_framework' ); ?></a>
-		            <img src="<?php echo THEME_DIR_URI; ?>/captcha/captcha.php" class="captcha-image" alt="captcha txt"> <br/>
+								<a href="#" class="captcha-change-image"><?php _e( 'Not readable? Change text.', 'mk_framework' ); ?></a>
+								<img src="<?php echo THEME_DIR_URI; ?>/captcha/captcha.php" class="captcha-image" alt="captcha txt"> <br/>
 				<?php } ?>
 
 				<div class="btn-cont">
-                    <button tabindex="<?php echo $tabindex_4; ?>" class="mk-progress-button mk-contact-button shop-flat-btn shop-skin-btn" data-style="move-up">
-                        <span class="mk-progress-button-content"><?php _e( 'Send', 'mk_framework' ); ?></span>
-                        <span class="mk-progress">
-                            <span class="mk-progress-inner"></span>
-                        </span>
-                        <span class="state-success"><i class="mk-moon-checkmark"></i></span>
-                        <span class="state-error"><i class="mk-moon-close"></i></span>
-                    </button>
-                </div>
+										<button tabindex="<?php echo $tabindex_4; ?>" class="mk-progress-button mk-contact-button shop-flat-btn shop-skin-btn" data-style="move-up">
+												<span class="mk-progress-button-content"><?php _e( 'Send', 'mk_framework' ); ?></span>
+												<span class="mk-progress">
+														<span class="mk-progress-inner"></span>
+												</span>
+												<span class="state-success"><i class="mk-moon-checkmark"></i></span>
+												<span class="state-error"><i class="mk-moon-close"></i></span>
+										</button>
+								</div>
 				<input type="hidden" value="<?php echo $mk_options['quick_contact_email']; ?>" name="contact_to"/>
 			</form>
 			<div class="bottom-arrow"></div>
@@ -545,10 +550,3 @@ if ( !function_exists( 'mk_footer_menu' ) ) {
 	}
 }
 /***************************************/
-
-
-
-
-
-
-
