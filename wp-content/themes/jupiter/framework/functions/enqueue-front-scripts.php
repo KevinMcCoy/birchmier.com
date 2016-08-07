@@ -38,13 +38,17 @@ function mk_theme_enqueue_scripts() {
 				if($mk_options['minify-css'] == 'true') {
 					wp_enqueue_style( 'theme-styles', THEME_STYLES.'/theme-styles.min.css', false, $theme_data['Version'], 'all' );
 					wp_enqueue_style( 'pe-line-icon', THEME_STYLES.'/pe-line-icons.min.css', false, $theme_data['Version'], 'all' );
-					wp_enqueue_style( 'mk_font-awesome', THEME_STYLES.'/font-awesome.min.css', false, $theme_data['Version'], 'all' );
+					// Theme FA 1st one and 2nd one is bower FA... If 2nd is not loaded, will load at later time
+					// wp_enqueue_style( 'mk_font-awesome', THEME_STYLES.'/font-awesome.min.css', false, $theme_data['Version'], 'all' );
+					wp_enqueue_style( 'font-awesome', THEME_STYLES.'/font-awesome.min.css', false, $theme_data['Version'], 'all' );
 					wp_enqueue_style( 'icomoon-fonts', THEME_STYLES.'/icomoon-fonts.min.css', false, $theme_data['Version'], 'all' );
 					wp_enqueue_style( 'theme-icons', THEME_STYLES.'/theme-icons.min.css', false, $theme_data['Version'], 'all' );
 				} else {
 					wp_enqueue_style( 'theme-styles', THEME_STYLES.'/styles.css', false, $theme_data['Version'], 'all' );
 					wp_enqueue_style( 'pe-line-icon', THEME_STYLES.'/pe-line-icons.css', false, $theme_data['Version'], 'all' );
-					wp_enqueue_style( 'mk_font-awesome', THEME_STYLES.'/font-awesome.css', false, $theme_data['Version'], 'all' );
+					// Theme FA 1st one and 2nd one is bower FA... If 2nd is not loaded, will load at later time
+					// wp_enqueue_style( 'mk_font-awesome', THEME_STYLES.'/font-awesome.css', false, $theme_data['Version'], 'all' );
+					wp_enqueue_style( 'font-awesome', THEME_STYLES.'/font-awesome.css', false, $theme_data['Version'], 'all' );
 					wp_enqueue_style( 'icomoon-fonts', THEME_STYLES.'/icomoon-fonts.css', false, $theme_data['Version'], 'all' );
 					wp_enqueue_style( 'theme-icons', THEME_STYLES.'/theme-icons.css', false, $theme_data['Version'], 'all' );
 					wp_enqueue_style( 'theme-icons', THEME_STYLES.'/theme-icons.css', false, $theme_data['Version'], 'all' );

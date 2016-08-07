@@ -4,20 +4,20 @@ global $mk_options;
 $mk_footer_class = $show_footer_old = $show_footer = '';
 $post_id = global_get_post_id();
 if($post_id) {
-  $show_footer_old = get_post_meta($post_id, '_footer', true );
-  $show_footer = get_post_meta($post_id, '_template', true );
+	$show_footer_old = get_post_meta($post_id, '_footer', true );
+	$show_footer = get_post_meta($post_id, '_template', true );
 
 }
 
 if($mk_options['footer_size'] == 'true') {
-  $mk_footer_class .= 'mk-background-stretch';
+	$mk_footer_class .= 'mk-background-stretch';
 }
 if($mk_options['disable_footer'] == 'false' || ($show_footer_old == 'false' || $show_footer == 'no-footer' || $show_footer == 'no-header-footer' || $show_footer == 'no-header-title-footer' || $show_footer == 'no-footer-title')) {
-  $mk_footer_class .= ' mk-footer-disable';
+	$mk_footer_class .= ' mk-footer-disable';
 }
 
 if($mk_options['footer_type'] == '2') {
-  $mk_footer_class .= ' mk-footer-unfold';
+	$mk_footer_class .= ' mk-footer-unfold';
 }
 
 $boxed_footer = (isset($mk_options['boxed_footer']) && !empty($mk_options['boxed_footer'])) ? $mk_options['boxed_footer'] : 'true';
@@ -150,12 +150,12 @@ endif;?>
 	<div class="<?php echo $boxed_footer_css;?>">
 		<?php if ( !empty( $mk_options['footer_logo'] ) ) {?>
 		<div class="mk-footer-logo">
-		    <a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name' ); ?>"><img alt="<?php bloginfo( 'name' ); ?>" src="<?php echo $mk_options['footer_logo']; ?>" /></a>
+				<a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name' ); ?>"><img alt="<?php bloginfo( 'name' ); ?>" src="<?php echo $mk_options['footer_logo']; ?>" /></a>
 		</div>
 		<?php } ?>
 
-    	<span class="mk-footer-copyright"><?php echo stripslashes($mk_options['copyright']); ?></span>
-    	<?php do_action('footer_menu'); ?>
+			<span class="mk-footer-copyright"><?php echo stripslashes($mk_options['copyright']); ?></span>
+			<?php do_action('footer_menu'); ?>
 	</div>
 	<div class="clearboth"></div>
 </div>
@@ -187,15 +187,15 @@ endif;?>
 	if($mk_options['analytics']){
 		?>
 		<script type="text/javascript">
-		  var _gaq = _gaq || [];
-		  _gaq.push(['_setAccount', '<?php echo stripslashes($mk_options['analytics']); ?>']);
-		  _gaq.push(['_trackPageview']);
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', '<?php echo stripslashes($mk_options['analytics']); ?>']);
+			_gaq.push(['_trackPageview']);
 
-		  (function() {
-		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		  })();
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
 
 		</script>
 	<?php } ?>
@@ -203,8 +203,8 @@ endif;?>
 </div>
 
 
-	<a href="#" class="mk-go-top"><i class="mk-icon-chevron-up"></i></a>
-	
+	<a href="#" class="mk-go-top"><i class="fa fa-chevron-up"></i></a>
+
 	<?php
 		do_action('quick_contact');
 		do_action('full_screen_search_form');
@@ -223,8 +223,8 @@ endif;?>
 		$ken_styles_length = count($app_dynamic_styles);
 
 		if ($ken_styles_length > 0) {
-			foreach ($app_dynamic_styles as $key => $val) { 
-				$app_dynamic_styles_ids[] = $val["id"]; 
+			foreach ($app_dynamic_styles as $key => $val) {
+				$app_dynamic_styles_ids[] = $val["id"];
 				$app_dynamic_styles_inject .= $val["inject"];
 			};
 		}
@@ -233,8 +233,8 @@ endif;?>
 
 
 		if ($modulesLength > 0) {
-			foreach ($app_modules as $key => $val) { 
-				$modules[] = $val["name"]; 
+			foreach ($app_modules as $key => $val) {
+				$modules[] = $val["name"];
 				$params[] = $val["params"];
 			};
 		}
@@ -278,7 +278,7 @@ endif;?>
 			});
 		};
 
-		<?php 
+		<?php
 			if ($modulesLength > 0) {
 				for ($i = 0; $i < $modulesLength; $i++) {
 					echo "abb.modules." . $modules[$i] . ".init({";
@@ -286,7 +286,7 @@ endif;?>
 							echo $key . ": '$val',";
 						}
 					echo "}); \n";
-				} 
+				}
 
 				echo "abb.init();";
 			}
@@ -295,5 +295,3 @@ endif;?>
 
 </body>
 </html>
-
-
