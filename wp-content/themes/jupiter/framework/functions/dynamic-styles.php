@@ -152,9 +152,9 @@ $typekit_font_family_2 = isset($mk_options['typekit_font_family_2']) ? $mk_optio
 
 if($typekit_id != '' && $typekit_elements_list_2 != '' && $typekit_font_family_2 != '') {
 	 if ( is_array( $typekit_elements_list_2 ) ) {
-	  $typekit_elements_list_2 = implode( ', ', $typekit_elements_list_2 );
+		$typekit_elements_list_2 = implode( ', ', $typekit_elements_list_2 );
 	 } else {
-	  $typekit_elements_list_2 = $typekit_elements_list_2;
+		$typekit_elements_list_2 = $typekit_elements_list_2;
 	 }
 	 $typekit_fonts_2 = $typekit_elements_list_2 . ' {font-family: "'.$typekit_font_family_2.'"}';
 
@@ -479,9 +479,9 @@ $output .= "
 
 #mk-boxed-layout
 {
-  -webkit-box-shadow: 0 0 {$boxed_layout_shadow_size}px rgba(0, 0, 0, {$boxed_layout_shadow_intensity});
-  -moz-box-shadow: 0 0 {$boxed_layout_shadow_size}px rgba(0, 0, 0, {$boxed_layout_shadow_intensity});
-  box-shadow: 0 0 {$boxed_layout_shadow_size}px rgba(0, 0, 0, {$boxed_layout_shadow_intensity});
+	-webkit-box-shadow: 0 0 {$boxed_layout_shadow_size}px rgba(0, 0, 0, {$boxed_layout_shadow_intensity});
+	-moz-box-shadow: 0 0 {$boxed_layout_shadow_size}px rgba(0, 0, 0, {$boxed_layout_shadow_intensity});
+	box-shadow: 0 0 {$boxed_layout_shadow_size}px rgba(0, 0, 0, {$boxed_layout_shadow_intensity});
 }
 
 
@@ -506,20 +506,20 @@ $output .= "
 
 .mk-header-bg
 {
-  -webkit-opacity: {$mk_options['header_opacity']};
-  -moz-opacity: {$mk_options['header_opacity']};
-  -o-opacity: {$mk_options['header_opacity']};
-  opacity: {$mk_options['header_opacity']};
+	-webkit-opacity: {$mk_options['header_opacity']};
+	-moz-opacity: {$mk_options['header_opacity']};
+	-o-opacity: {$mk_options['header_opacity']};
+	opacity: {$mk_options['header_opacity']};
 }
 
 
 
 .header-sticky-ready .mk-header-bg
 {
-  -webkit-opacity: {$mk_options['header_sticky_opacity']};
-  -moz-opacity: {$mk_options['header_sticky_opacity']};
-  -o-opacity: {$mk_options['header_sticky_opacity']};
-  opacity: {$mk_options['header_sticky_opacity']};
+	-webkit-opacity: {$mk_options['header_sticky_opacity']};
+	-moz-opacity: {$mk_options['header_sticky_opacity']};
+	-o-opacity: {$mk_options['header_sticky_opacity']};
+	opacity: {$mk_options['header_sticky_opacity']};
 }
 
 ";
@@ -887,11 +887,11 @@ $footer_links_hover_color = (isset($mk_options['footer_links_hover_color']) && !
 $dash_links_hover_color = (isset($mk_options['dash_links_hover_color']) && !empty($mk_options['dash_links_hover_color'])) ? $mk_options['dash_links_hover_color'] : $skin_color;
 
 $output .="
-#mk-sidebar .widget:not(.widget_social_networks) a:hover 
+#mk-sidebar .widget:not(.widget_social_networks) a:hover
 {
 	color: {$sidebar_links_hover_color};
 }
-#mk-footer .widget:not(.widget_social_networks) a:hover 
+#mk-footer .widget:not(.widget_social_networks) a:hover
 {
 	color: {$footer_links_hover_color};
 }
@@ -967,7 +967,7 @@ $output .= "
 
 .mk-boxed-enabled #mk-boxed-layout .header-style-2.header-sticky-ready .mk-header-nav-container {
 	width: {$boxed_layout_width}px !important;
-	left:auto !important;	
+	left:auto !important;
 }
 
 .header-style-1 .mk-header-start-tour,
@@ -1005,11 +1005,11 @@ $output .= "
 $toolbar_toggle = !empty($mk_options['theme_toolbar_toggle']) ? $mk_options['theme_toolbar_toggle'] : 'true';
 
 if(global_get_post_id()) {
-  $enable = get_post_meta( global_get_post_id(), '_enable_local_backgrounds', true );
-  if($enable == 'true') {
-  	$toolbar_toggle_meta = get_post_meta( $post_id, 'theme_toolbar_toggle', true );
-    $toolbar_toggle = (isset($toolbar_toggle_meta) && !empty($toolbar_toggle_meta)) ? $toolbar_toggle_meta : $toolbar_toggle;
-  }
+	$enable = get_post_meta( global_get_post_id(), '_enable_local_backgrounds', true );
+	if($enable == 'true') {
+		$toolbar_toggle_meta = get_post_meta( $post_id, 'theme_toolbar_toggle', true );
+		$toolbar_toggle = (isset($toolbar_toggle_meta) && !empty($toolbar_toggle_meta)) ? $toolbar_toggle_meta : $toolbar_toggle;
+	}
 }
 
 // This seems to be an old tweak - the whole <body> is already moved down the toolbar
@@ -1394,7 +1394,7 @@ $output .= "
 	color: {$mk_options['main_nav_top_text_color']};
 }
 
-.main-navigation-ul > li.no-mega-menu ul.sub-menu li.menu-item a.menu-item-link 
+.main-navigation-ul > li.no-mega-menu ul.sub-menu li.menu-item a.menu-item-link
 {
 	width:{$main_nav_sub_width}px;
 }
@@ -1531,7 +1531,7 @@ $output .= "
 .main-navigation-ul > li.no-mega-menu  ul.sub-menu:after,
 .main-navigation-ul > li.has-mega-menu > ul.sub-menu:after
 {
-  background-color:{$mk_options['main_nav_sub_border_top_color']};
+	background-color:{$mk_options['main_nav_sub_border_top_color']};
 }
 .mk-shopping-cart-box {
 	border-top:2px solid {$mk_options['main_nav_sub_border_top_color']};
@@ -1602,7 +1602,7 @@ $output .= "
 	color: {$mk_options['main_nav_sub_text_color_hover']} !important;
 }
 .megamenu-widgets-container a:hover {
-	color: {$mk_options['main_nav_sub_text_color_hover']};	
+	color: {$mk_options['main_nav_sub_text_color_hover']};
 }
 
 
@@ -1654,7 +1654,7 @@ if($mk_options['vertical_header_align'] != 'center') {
 if(!empty($mk_options['mega_menu_divider_color'])) {
 
 $output .= ".has-mega-menu > ul.sub-menu > li.menu-item {
-	  border-left: 1px solid {$mk_options['mega_menu_divider_color']};
+		border-left: 1px solid {$mk_options['mega_menu_divider_color']};
 }
 ";
 }
@@ -1679,9 +1679,9 @@ if($nav_sub_shadow != 'false') {
 .main-navigation-ul > li.no-mega-menu  ul,
 .main-navigation-ul > li.has-mega-menu > ul,
 .mk-shopping-cart-box {
-  -webkit-box-shadow: 0 20px 50px 10px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 20px 50px 10px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 20px 50px 10px rgba(0, 0, 0, 0.15);
+	-webkit-box-shadow: 0 20px 50px 10px rgba(0, 0, 0, 0.15);
+	-moz-box-shadow: 0 20px 50px 10px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 20px 50px 10px rgba(0, 0, 0, 0.15);
 }
 ";
 }
@@ -1759,20 +1759,20 @@ $output .= "
 
 			.header-style-2 .header-logo .center-logo
 			{
-			    text-align: right !important;
+					text-align: right !important;
 			}
 
 
 			.header-style-2 .header-logo .center-logo a
 			{
-			    margin: 0 !important;
+					margin: 0 !important;
 			}
 
 
 			.header-logo,
 			.header-style-4 .header-logo
 			{
-			    height: 90px !important;
+					height: 90px !important;
 			}
 
 			.mk-header-inner
@@ -1816,7 +1816,7 @@ $output .= "
 			#mk-responsive-nav li a, #mk-responsive-nav li ul li a:hover,
 			#mk-responsive-nav .mk-nav-arrow
 			{
-		  			color:{$mk_options['responsive_nav_txt_color']} !important;
+						color:{$mk_options['responsive_nav_txt_color']} !important;
 			}
 
 
@@ -1915,18 +1915,18 @@ $output .= "
 			.vertical-header-enabled.vertical-header-center #theme-page > .mk-page-section,
 			.vertical-header-enabled.vertical-header-left #theme-page > .wpb_row,
 			.vertical-header-enabled.vertical-header-center #theme-page > .wpb_row,
-			.vertical-header-enabled.vertical-header-left #mk-theme-container:not(.mk-transparent-header), 
+			.vertical-header-enabled.vertical-header-left #mk-theme-container:not(.mk-transparent-header),
 			.vertical-header-enabled.vertical-header-center #mk-footer,
 			.vertical-header-enabled.vertical-header-left #mk-footer,
 			.vertical-header-enabled.vertical-header-center #mk-theme-container:not(.mk-transparent-header) {
-			  padding-left: 0 !important;
+				padding-left: 0 !important;
 			}
 			.vertical-header-enabled.vertical-header-right #theme-page > .mk-main-wrapper-holder,
 			.vertical-header-enabled.vertical-header-right #theme-page > .mk-page-section,
 			.vertical-header-enabled.vertical-header-right #theme-page > .wpb_row,
 			.vertical-header-enabled.vertical-header-right #mk-footer,
 			.vertical-header-enabled.vertical-header-right #mk-theme-container:not(.mk-transparent-header) {
-			  padding-right: 0 !important;
+				padding-right: 0 !important;
 			}
 
 }
@@ -1935,131 +1935,131 @@ $output .= "
 
 
 @media handheld, only screen and (min-width: {$mk_options['responsive_nav_width']}px) {
-		  .mk-transparent-header .sticky-style-slide .mk-header-holder {
-		    position: absolute;
-		  }
-		  .mk-transparent-header .remove-header-bg-true:not(.header-sticky-ready) .mk-header-bg {
-		    opacity: 0;
-		  }
-		  .mk-transparent-header .remove-header-bg-true#mk-header:not(.header-sticky-ready) .mk-header-inner {
-		    border: 0;
-		  }
-		  .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-desktop-logo.light-logo {
-		    display: block !important;
-		  }
-		  .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-desktop-logo.dark-logo {
-		    display: none !important;
-		  }
-		  .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .main-navigation-ul > li.menu-item > a.menu-item-link,
-		  .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-search-trigger,
-		  .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-shoping-cart-link i,
-		  .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-header-cart-count,
-		  .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-header-start-tour,
-		  .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) #mk-header-social a i,
-		  .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.menu-item > a.menu-item-link:hover,
-		  .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.menu-item:hover > a.menu-item-link,
-		  .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
-		  .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link,
-		  .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul > li.menu-item > a.menu-item-link:hover,
-		  .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul > li.menu-item:hover > a.menu-item-link,
-		  .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
-		  .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li a,
-		  .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li > a:after, 
-		  .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li.mk-vm-back:after {
-		    color: #fff !important;
-		  }
-		  .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-css-icon-menu div {
-		    background-color: #fff !important;
-		  }
-		  .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.dropdownOpen > a.menu-item-link,
-		  .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.active > a.menu-item-link,
-		  .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.open > a.menu-item-link,
-		  .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.menu-item > a:hover,
-		  .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
-		  .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link {
-		    border-top-color: #fff;
-		  }
-		  .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
-		  .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link,
-		  .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-item > a,
-		  .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-ancestor > a {
-		    border: 2px solid #fff;
-		    background-color: #fff;
-		    color: #222 !important;
-		  }
-		  .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.menu-item > a.menu-item-link:hover,
-		  .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.menu-item:hover > a.menu-item-link,
-		  .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li > a:hover,
-		  .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li:hover > a {
-		    border: 2px solid #fff;
-		  }
-		  .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
-		  .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
-		  .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.current-menu-item > a.menu-item-link,
-		  .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-5 .main-navigation-ul > li.menu-item > a.menu-item-link:after {
-		    background-color: #fff;
-		    color: #222 !important;
-		  }
+			.mk-transparent-header .sticky-style-slide .mk-header-holder {
+				position: absolute;
+			}
+			.mk-transparent-header .remove-header-bg-true:not(.header-sticky-ready) .mk-header-bg {
+				opacity: 0;
+			}
+			.mk-transparent-header .remove-header-bg-true#mk-header:not(.header-sticky-ready) .mk-header-inner {
+				border: 0;
+			}
+			.mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-desktop-logo.light-logo {
+				display: block !important;
+			}
+			.mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-desktop-logo.dark-logo {
+				display: none !important;
+			}
+			.mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .main-navigation-ul > li.menu-item > a.menu-item-link,
+			.mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-search-trigger,
+			.mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-shoping-cart-link i,
+			.mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-header-cart-count,
+			.mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-header-start-tour,
+			.mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) #mk-header-social a i,
+			.mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.menu-item > a.menu-item-link:hover,
+			.mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.menu-item:hover > a.menu-item-link,
+			.mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+			.mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link,
+			.mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul > li.menu-item > a.menu-item-link:hover,
+			.mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul > li.menu-item:hover > a.menu-item-link,
+			.mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+			.mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li a,
+			.mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li > a:after,
+			.mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li.mk-vm-back:after {
+				color: #fff !important;
+			}
+			.mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-css-icon-menu div {
+				background-color: #fff !important;
+			}
+			.mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.dropdownOpen > a.menu-item-link,
+			.mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.active > a.menu-item-link,
+			.mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.open > a.menu-item-link,
+			.mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.menu-item > a:hover,
+			.mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+			.mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link {
+				border-top-color: #fff;
+			}
+			.mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+			.mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link,
+			.mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-item > a,
+			.mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-ancestor > a {
+				border: 2px solid #fff;
+				background-color: #fff;
+				color: #222 !important;
+			}
+			.mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.menu-item > a.menu-item-link:hover,
+			.mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.menu-item:hover > a.menu-item-link,
+			.mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li > a:hover,
+			.mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li:hover > a {
+				border: 2px solid #fff;
+			}
+			.mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+			.mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+			.mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+			.mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-5 .main-navigation-ul > li.menu-item > a.menu-item-link:after {
+				background-color: #fff;
+				color: #222 !important;
+			}
 
 
-		  .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-desktop-logo.dark-logo {
-		    display: block !important;
-		  }
-		  .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-desktop-logo.light-logo {
-		    display: none !important;
-		  }
-		  .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .main-navigation-ul > li.menu-item > a.menu-item-link,
-		  .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-search-trigger,
-		  .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-shoping-cart-link i,
-		  .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-header-cart-count,
-		  .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-header-start-tour,
-		  .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) #mk-header-social a i,
-		  .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
-		  .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
-		  .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul li.current-menu-item > a.menu-item-link,
-		  .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul li.current-menu-ancestor > a.menu-item-link,
-		  .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
-		  .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
-		  .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul li.current-menu-item > a.menu-item-link,
-		  .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul li.current-menu-ancestor > a.menu-item-link,
-		  .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li a,
-		  .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li > a:after, 
-		  .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li.mk-vm-back:after {
-		    color: #222 !important;
-		  }
-		  .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.dropdownOpen > a.menu-item-link,
-		  .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.active > a.menu-item-link,
-		  .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.open > a.menu-item-link,
-		  .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.menu-item > a:hover,
-		  .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
-		  .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link {
-		    border-top-color: #222;
-		  }
-		  .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-css-icon-menu div {
-		    background-color: #222 !important;
-		  }
-		  .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
-		  .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link,
-		  .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-item > a,
-		  .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-ancestor > a {
-		    border: 2px solid #222;
-		    background-color: #222;
-		    color: #fff !important;
-		  }
-		  .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.menu-item > a.menu-item-link:hover,
-		  .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.menu-item:hover > a.menu-item-link,
-		  .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li > a:hover,
-		  .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li:hover > a {
-		    border: 2px solid #222;
-		  }
-		  .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
-		  .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
-		  .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.current-menu-item > a.menu-item-link,
-		  .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.current-menu-ancestor > a.menu-item-link,
-		  .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-5 .main-navigation-ul > li.menu-item > a.menu-item-link:after {
-		    background-color: #222;
-		    color: #fff !important;
-		  }
+			.mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-desktop-logo.dark-logo {
+				display: block !important;
+			}
+			.mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-desktop-logo.light-logo {
+				display: none !important;
+			}
+			.mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .main-navigation-ul > li.menu-item > a.menu-item-link,
+			.mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-search-trigger,
+			.mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-shoping-cart-link i,
+			.mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-header-cart-count,
+			.mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-header-start-tour,
+			.mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) #mk-header-social a i,
+			.mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+			.mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+			.mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+			.mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul li.current-menu-ancestor > a.menu-item-link,
+			.mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+			.mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+			.mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+			.mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul li.current-menu-ancestor > a.menu-item-link,
+			.mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li a,
+			.mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li > a:after,
+			.mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li.mk-vm-back:after {
+				color: #222 !important;
+			}
+			.mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.dropdownOpen > a.menu-item-link,
+			.mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.active > a.menu-item-link,
+			.mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.open > a.menu-item-link,
+			.mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.menu-item > a:hover,
+			.mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+			.mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link {
+				border-top-color: #222;
+			}
+			.mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-css-icon-menu div {
+				background-color: #222 !important;
+			}
+			.mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+			.mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link,
+			.mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-item > a,
+			.mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-ancestor > a {
+				border: 2px solid #222;
+				background-color: #222;
+				color: #fff !important;
+			}
+			.mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.menu-item > a.menu-item-link:hover,
+			.mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.menu-item:hover > a.menu-item-link,
+			.mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li > a:hover,
+			.mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li:hover > a {
+				border: 2px solid #222;
+			}
+			.mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+			.mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+			.mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+			.mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.current-menu-ancestor > a.menu-item-link,
+			.mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-5 .main-navigation-ul > li.menu-item > a.menu-item-link:after {
+				background-color: #222;
+				color: #fff !important;
+			}
 }
 
 
@@ -2101,7 +2101,7 @@ $output .= "
 .mk-tooltip a,
 .mk-accordion-single.current .mk-accordion-tab i,
 .monocolor.pricing-table .pricing-price span,
-.quantity .plus:hover,	
+.quantity .plus:hover,
 .quantity .minus:hover,
 .mk-woo-tabs .mk-tabs-tabs li.ui-state-active a,
 .product .add_to_cart_button i,
@@ -2285,5 +2285,7 @@ wp_add_inline_style( 'theme-dynamic-styles', $output);
 
 
 }
+
+
 add_action( 'wp_enqueue_scripts', 'mk_dynamic_css' );
 ?>
