@@ -2279,7 +2279,7 @@ $output = preg_replace('/\r|\n|\t/', '', $output);
 
 
 
-wp_enqueue_style('theme-dynamic-styles',get_template_directory_uri() . '/custom.css');
+wp_enqueue_style('theme-dynamic-styles',get_template_directory_uri() . '/custom.css',false,true,'all');
 
 wp_add_inline_style( 'theme-dynamic-styles', $output);
 
