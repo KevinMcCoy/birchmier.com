@@ -26,11 +26,11 @@ div.ls-darkskin{
 
 	a.ls-nav-prev{
 		background-image: url('images/arrow.gif');
-		left:10px;
+		left:14px;
 	}
 	a.ls-nav-next{
 		background-image: url('images/arrow.gif');
-		right:10px;
+		right:14px;
 		transform: rotate(180deg);
 	}
 }
@@ -217,10 +217,18 @@ div#mk-breadcrumbs div.mk-breadcrumbs-inner{
 
 
 /* Footer padding adj. */
-#mk-footer div.footer-wrapper,
-#mk-footer section.widget{
-	padding-bottom:0px;
-	margin-bottom:0px;
+#mk-footer{
+	div.footer-wrapper,
+	section.widget{
+		padding-bottom:0px;
+		margin-bottom:0px;
+	}
+	div#sub-footer{
+		padding: 0 3.2%;
+		.fullwidth-footer .mk-footer-copyright{
+			padding-left: 8px;
+		}
+	}
 }
 
 
