@@ -1,6 +1,8 @@
 *.log
 .htaccess
 
+node_modules/
+
 wp-config.php
 wp-config*.php
 
