@@ -1,17 +1,15 @@
 /*
+ * Custom Style Below
+ */
 
 
-Custom Style Below
-
-*/
-// Slider
-
+// Slide Show Slider
+// Home Page Slider
 div.ls-darkskin{
 
 	a.ls-nav-prev:hover,
 	a.ls-nav-next:hover{
-		background-position-y: 0px;
-		background-position-x: 0px;
+		background-position: 0px 0px;
 		opacity: 0.92;
 		cursor: pointer;
 	}
@@ -19,23 +17,23 @@ div.ls-darkskin{
 	a.ls-nav-next{
 		width: 48px;
 		height:48px;
-		background-position-x: 0px;
-		background-position-y: 0px;
+		background-position: 0px 0px;
 		opacity: 0.67;
 	}
 
 	a.ls-nav-prev{
-		background-image: url('images/arrow.gif');
+		background-image: url('images/arrow.png');
 		left:14px;
 	}
 	a.ls-nav-next{
-		background-image: url('images/arrow.gif');
+		background-image: url('images/arrow.png');
 		right:14px;
 		transform: rotate(180deg);
 	}
 }
 
 
+// Gallery Page Slider
 div.vc_images_carousel{
 	a.vc_left.vc_carousel-control span.icon-prev,
 	a.vc_right.vc_carousel-control span.icon-next{
@@ -47,7 +45,11 @@ div.vc_images_carousel{
 		cursor: pointer;
 	}
 	a.vc_left.vc_carousel-control:hover,
-	a.vc_right.vc_carousel-control:hover{
+	a.vc_right.vc_carousel-control:hover,
+	a.vc_left.vc_carousel-control:visited,
+	a.vc_right.vc_carousel-control:visited,
+	a.vc_left.vc_carousel-control:active,
+	a.vc_right.vc_carousel-control:active{
 		opacity: 0.92;
 		cursor: pointer;
 	}
@@ -62,16 +64,16 @@ div.vc_images_carousel{
 	}
 
 	a.vc_left.vc_carousel-control{
-		background-image: url('images/arrow_36.gif');
+		background-image: url('images/arrow_36.png');
 		left: 7px;
 	}
 	a.vc_right.vc_carousel-control{
-		background-image: url('images/arrow_36.gif');
+		background-image: url('images/arrow_36.png');
 		right: 7px;
 		transform: rotate(180deg);
 	}
-
 }
+// [END] Slide Show Slider
 
 
 
@@ -99,14 +101,14 @@ header#mk-header{
 /* Sub Menu current page - styles */
 #mk-main-navigation ul.sub-menu a.menu-item-link:hover{
 	font-weight: 700;
-			letter-spacing: 0.65px;
+	letter-spacing: 0.65px;
 }
 #mk-main-navigation ul.sub-menu li.current-menu-item a.menu-item-link,
 #mk-main-navigation ul.sub-menu li.current-menu-item a.menu-item-link:hover{
 	font-weight: 700;
 	color:#f97352!important;
 	cursor:default;
-			letter-spacing: 1px;
+	letter-spacing: 1px;
 }
 /* #mk-main-navigation ul.sub-menu li.current_page_item a.menu-item-link{ ?page_item? } */
 
